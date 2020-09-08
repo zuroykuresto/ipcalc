@@ -51,7 +51,6 @@ namespace ipcalc
                 else Console.WriteLine("Wrong IP");
             }
             else Console.WriteLine("Wrong string format, use: \"xxx.xxx.xxx.xxx/xx\"\n Example: 192.168.0.1/24");
-            Console.ReadLine();
         }
     }
 }
