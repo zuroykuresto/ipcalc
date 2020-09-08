@@ -15,7 +15,11 @@ namespace ipcalc
         static void Main(string[] args)
         {
             if (args.Length == 0) return;
-
+            else if (args[0] == "/help")
+            {
+                Console.WriteLine("Command usage: \"ip/cidr\"\n Example: 192.168.0.1/24");
+                return;
+            }
             char[] delimIpCidr = { '/' };
             int cidr;
             string[] words = args[0].Split(delimIpCidr);
@@ -37,8 +41,8 @@ namespace ipcalc
                             IPCalculation ipc = new IPCalculation(ip, byte.Parse(Convert.ToString(cidr)));
                             Console.Write($"Network address: {ipc.getNetworkAddress()}\n");
                             Console.Write($"Network mask: {ipc.getNetmask()}\n");
-                            Console.Write($"Totallys host available {ipc.getHostnumber()}, {ipc.getfirstAddress()} - {ipc.getLastAddress()}\n");
-                            Console.Write($"Broudcast address: {ipc.getBroadcastAddress()}\n");
+                            Console.Write($"Totally host available {ipc.getHostnumber()}, {ipc.getfirstAddress()} - {ipc.getLastAddress()}\n");
+                            Console.Write($"Broаdcast address: {ipc.getBroadcastAddress()}\n");
                         }
                         else Console.WriteLine("Wrong CIDR must be in dound of x.x.x.x/32");
                     }
