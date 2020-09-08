@@ -36,7 +36,7 @@ namespace ipcalc
                     if (Int32.TryParse(strParam[1], out cidr))
                     {
                         cidr = Convert.ToInt32(strParam[1]);
-                        if (cidr < 32)
+                        if (cidr <= 32)
                         {
                             IPCalculation ipc = new IPCalculation(ip, byte.Parse(Convert.ToString(cidr)));
                             Console.Write($"Network address: {ipc.getNetworkAddress()}\n");
